@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/authentification/pom.xml" />
         <option value="$PROJECT_DIR$/task_management/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway_for_project/pom.xml" />
       </list>
     </option>
   </component>

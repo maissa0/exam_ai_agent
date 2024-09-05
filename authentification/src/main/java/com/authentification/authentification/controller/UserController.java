@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 public class UserController {
 
 
@@ -25,13 +25,13 @@ public class UserController {
 
 
     @GetMapping("/profile")
-    public ResponseEntity<User> getUserProfille (@RequestHeader("Authorization") String jwt){
+    public ResponseEntity<User> getUserProfile (@RequestHeader("Authorization") String jwt){
         User user = userService.getUserProfile(jwt);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<User>> getUsers (@RequestHeader("Authorization") String jwt){
         List<User> user = userService.getAllUsers();
         return new ResponseEntity<>(user, HttpStatus.OK);

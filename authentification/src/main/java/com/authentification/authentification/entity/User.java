@@ -22,8 +22,8 @@ public class User implements UserDetails {
     private String email;
     private String password;
 
-    @Enumerated(value = EnumType.STRING)
-    private Role role;
+    //@Enumerated(value = EnumType.STRING)
+    private String role;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
@@ -32,7 +32,8 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
+       // return List.of(new SimpleGrantedAuthority(role.name()));
+        return List.of(new SimpleGrantedAuthority(role));
     }
 
 

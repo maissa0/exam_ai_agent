@@ -67,7 +67,8 @@ public class AuthController {
         createdUser.setEmail(email);
         createdUser.setPassword(passwordEncoder.encode(password));
         createdUser.setName(name);
-        createdUser.setRole(Role.valueOf(role));
+        //createdUser.setRole(Role.valueOf(role));
+        createdUser.setRole(role);
 
         // Create new employee
         Employee createdEmployee = new Employee();
@@ -104,6 +105,8 @@ public class AuthController {
     public ResponseEntity<AuthResponse> signin(@RequestBody LoginRequest loginRequest) throws Exception {
         String email = loginRequest.getEmail();
         String password = loginRequest.getPassword();
+
+        System.out.println("eeee");
 
         System.out.println(email + " " + password);
 
